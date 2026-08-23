@@ -8,8 +8,13 @@ Install pandas on Windows:
 pip install pandas
 ```
 Install pandas on Macs:
-'''pip3 install pandas
-'''
+```
+pip3 install pandas
+```
+Import pandas (usually as 'pd'):
+```python
+import pandas as pd
+```
 
 ### Reading files
 #### csv
