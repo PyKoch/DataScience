@@ -18,7 +18,19 @@ import pandas as pd
 
 ### Reading files
 #### csv
+```python
+df = pd.read_csv(path_to_csv_file)
+# df stands for dataframe
+```
 
+### Viewing dataframe content
+```python
+# oiutput the first 5 lines of the dataframe
+print(df.head())  
+
+# output the last 5 lines of the dataframe
+print (df.tail())
+```
 
 [This pdf](https://images.datacamp.com/image/upload/v1676302204/Marketing/Blog/Pandas_Cheat_Sheet.pdf) by datacamp is a good summary of the commands we will be using. 
 Download it and try it out.  
