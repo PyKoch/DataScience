@@ -4,9 +4,9 @@
 Pandas is a library that allows you to handle 'dataframes' (and 'series'), which you can think of as spreadsheets. 
 
 Install pandas on Windows: 
-'''
+```
 pip install pandas
-'''
+```
 Install pandas on Macs:
 '''pip3 install pandas
 '''
