@@ -35,7 +35,7 @@ print (df.tail())
 #### splitting content into several columns
 ```python
 # split the column with the header 'timestamp;value' into two columns called 'timestamp' and 'level':
-df_level[['timestamp', 'level']] = df_level['timestamp;value'].str.split(';', expand=True)
+df[['timestamp', 'level']] = df['timestamp;value'].str.split(';', expand=True)
 ```
 
 #### delete a column
