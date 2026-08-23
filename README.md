@@ -31,6 +31,18 @@ print(df.head())
 # output the last 5 lines of the dataframe
 print (df.tail())
 ```
+### Operations on column content
+#### splitting content into several columns
+```python
+# split the column with the header 'timestamp;value' into two columns called 'timestamp' and 'level':
+df_level[['timestamp', 'level']] = df_level['timestamp;value'].str.split(';', expand=True)
+```
+
+#### delete a column
+```python
+# delete the column named 'length'
+df = df.drop(columns=["length"])
+```
 
 [This pdf](https://images.datacamp.com/image/upload/v1676302204/Marketing/Blog/Pandas_Cheat_Sheet.pdf) by datacamp is a good summary of the commands we will be using. 
 Download it and try it out.  
