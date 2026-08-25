@@ -16,11 +16,19 @@ Import pandas (usually as 'pd'):
 import pandas as pd
 ```
 
-### Reading files
+### Reading and writing files
 #### csv
 ```python
-df = pd.read_csv(path_to_csv_file)
+df = pd.read_csv('path_to_csv_file')
 # df stands for dataframe
+
+df.to_csv('path_to_csv_file')
+
+# Standard export (drops the row index)
+df.to_csv('output.csv', index=False)
+
+# Use the tab or semicolon as separator instead of the comma: sep='\t' or sep=';'
+df.to_csv('output.csv', index=False, sep='\t')
 ```
 
 ### Viewing dataframe content
