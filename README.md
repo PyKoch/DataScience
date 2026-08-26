@@ -69,11 +69,10 @@ Date and time	water level
 ```
 The first column contains this data: "12/30/1909, 4:00:00 Uhr"
 If we are only interested in the date, we can split the content by comma and take the first part (str[0])
-To specify in which format the date is saved, the format = '%m/%d/%Y' makes clear that it's month, day and year, separated by '/'. 
-Create a new column with just the date now as a datetime object rather than as a string: 
+Saving it all in a new column 'Date':
 
 ```python
-df['Date'] = pd.to_datetime(df['Datum und Uhrzeit'].str.split(',').str[0], format='%m/%d/%Y')
+df['Date'] = df['Datum und Uhrzeit'].str.split(',').str[0]
 ```
 
 #### delete a column
