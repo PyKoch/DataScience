@@ -53,7 +53,8 @@ print(df.info())
 ### Operations on column content
 #### splitting content into several columns
 ```python
-# split the column with the header 'timestamp;value' into two columns called 'timestamp' and 'level':
+# split the column with the header 'timestamp;value' into two columns called 'timestamp' and 'level'.
+# You need to specify where to split (here you use the semicolon to split)
 df[['timestamp', 'level']] = df['timestamp;value'].str.split(';', expand=True)
 ```
 
@@ -71,6 +72,11 @@ df["timestamp"] = pd.to_datetime(df["timestamp"])
 # Dataframes have an index column. You can use the datetime information instead:
 # (Optional) Set timestamp as index for time-series operations
 df.set_index("timestamp", inplace=True)
+```
+### Graphing
+Remember to import matplotlib (after installing it)
+```python
+import matplotlib.pyplot as plt
 ```
 
 [This pdf](https://images.datacamp.com/image/upload/v1676302204/Marketing/Blog/Pandas_Cheat_Sheet.pdf) by datacamp is a good summary of the commands we will be using. 
