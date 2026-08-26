@@ -30,6 +30,10 @@ df.to_csv('output.csv', index=False)
 # Use the tab or semicolon as separator instead of the comma: sep='\t' or sep=';'
 df.to_csv('output.csv', index=False, sep='\t')
 ```
+#### json
+```python
+df = pd.read_json('path_to_json_file')
+```
 
 ### Viewing dataframe content
 ```python
