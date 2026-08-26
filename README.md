@@ -37,8 +37,11 @@ df = pd.read_json('path_to_json_file')
 
 ### Viewing dataframe content
 ```python
-# oiutput the first 5 lines of the dataframe
-print(df.head())  
+# output the first 5 lines of the dataframe
+print(df.head())
+
+# view the first 10 lines
+print(df.head(10))
 
 # output the last 5 lines of the dataframe
 print (df.tail())
@@ -55,6 +58,16 @@ df[['timestamp', 'level']] = df['timestamp;value'].str.split(';', expand=True)
 ```python
 # delete the column named 'length'
 df = df.drop(columns=["length"])
+```
+
+#### turn time related information into date-time objects
+```python
+# Ensure the timestamp column is parsed as timezone-aware datetime objects
+df["timestamp"] = pd.to_datetime(df["timestamp"])
+
+# Dataframes have an index column. You can use the datetime information instead:
+# (Optional) Set timestamp as index for time-series operations
+df.set_index("timestamp", inplace=True)
 ```
 
 [This pdf](https://images.datacamp.com/image/upload/v1676302204/Marketing/Blog/Pandas_Cheat_Sheet.pdf) by datacamp is a good summary of the commands we will be using. 
