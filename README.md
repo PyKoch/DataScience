@@ -45,6 +45,9 @@ print(df.head(10))
 
 # output the last 5 lines of the dataframe
 print (df.tail())
+
+# get information on the content and the type of data:
+print(df.info())
 ```
 
 ### Operations on column content
