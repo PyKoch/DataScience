@@ -90,16 +90,28 @@ as a string, then this date can be converted to a datetime object (for easier pr
 
 ```python
 # Ensure the timestamp column is parsed as timezone-aware datetime objects
-df["Date"] = pd.to_datetime(df["Date"])
+# %m: month, 1 or 2 digits, %d: day of the month, 1 or 2 digits, %Y: 4 digit year
+df["Date"] = pd.to_datetime(df["Date"], format = '%m/%d/%Y')
 
-# Extract day or month or year with this command: 
+# Then you can extract day, month or year with this command: 
 ```python
-df_hist['Month'] = df_hist['Date'].dt.month
+df['Month'] = df['Date'].dt.month
 ```
-# Dataframes have an index column. You can use the datetime information instead:
+Dataframes have an index column. You can use the datetime information instead:
+```python
 # (Optional) Set timestamp as index for time-series operations
 df.set_index("timestamp", inplace=True)
 ```
+#### grouping and calculations
+Grouping allows you to arrange your data based on the column you choose:
+```python
+df = df.groupby('Month')
+```
+Calculate the mean for each month: 
+```python
+df_mean = df.groupby('Month')['value'].mean()
+```
+
 ### Graphing
 Remember to import matplotlib (after installing it)
 ```python
