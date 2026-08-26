@@ -82,15 +82,23 @@ df = df.drop(columns=["length"])
 ```
 
 #### turn time related information into date-time objects
+If the 'Date' column contains 
+```csv
+12/21/2026
+```
+as a string, then this date can be converted to a datetime object (for easier processing):
+
 ```python
 # Ensure the timestamp column is parsed as timezone-aware datetime objects
-df["timestamp"] = pd.to_datetime(df["timestamp"])
+df["Date"] = pd.to_datetime(df["Date"])
 
+# Extract day or month or year with this command: 
+```python
+df_hist['Month'] = df_hist['Date'].dt.month
+```
 # Dataframes have an index column. You can use the datetime information instead:
 # (Optional) Set timestamp as index for time-series operations
 df.set_index("timestamp", inplace=True)
-
-
 ```
 ### Graphing
 Remember to import matplotlib (after installing it)
