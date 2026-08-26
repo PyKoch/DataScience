@@ -39,6 +39,7 @@ print(df.head())
 # output the last 5 lines of the dataframe
 print (df.tail())
 ```
+
 ### Operations on column content
 #### splitting content into several columns
 ```python
