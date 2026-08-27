@@ -123,6 +123,8 @@ After your data processing you can choose between different types of plots:
 ### User picking files and interacting
 The 'askopenfilename()' function allows the user to pick a file during the execution of the code. When you want to use various files, this can be handy. 
 ```python
+from tkinter import filedialog
+
 path = filedialog.askopenfilename()
 
 # You can even give a prompt what the user should do:
