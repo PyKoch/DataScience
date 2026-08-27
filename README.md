@@ -120,5 +120,19 @@ import matplotlib.pyplot as plt
 
 After your data processing you can choose between different types of plots: 
 
+### User picking files and interacting
+The 'askopenfilename()' function allows the user to pick a file during the execution of the code. When you want to use various files, this can be handy. 
+```python
+path = filedialog.askopenfilename()
+
+# You can even give a prompt what the user should do:
+path = filedialog.askopenfilename(title="Select Historical Water Level CSV")
+
+# You can specify which file types can be picked (to avoid mistakes)
+path = filedialog.askopenfilename(filetypes=[("CSV files", "*.csv")])
+
+# You can specify the directory which will be opened
+path = filedialog.askopenfilename(initialdir = '/Users/vk0604/Documents/Coding')
+```
 [This pdf](https://images.datacamp.com/image/upload/v1676302204/Marketing/Blog/Pandas_Cheat_Sheet.pdf) by datacamp is a good summary of the commands we will be using. 
 Download it and try it out.  
